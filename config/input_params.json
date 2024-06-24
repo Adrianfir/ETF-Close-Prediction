@@ -1,0 +1,18 @@
+{
+	"data": {
+		"path":"/Users/pouyafirouzmakan/Desktop/archive/ETFs/sret.us.txt"
+			},
+
+	"model":{"lin_reg": {}, 
+
+				"svm": {}
+			},
+
+	"grid_s":{"cv": 5, "score": "neg_mean_absolute_error"},
+
+	"figs":{"dpi": 200,
+			"x_size": 12,
+			"y_size": 8
+			}
+
+}
