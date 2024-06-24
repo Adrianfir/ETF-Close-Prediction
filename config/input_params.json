@@ -8,11 +8,14 @@
 				"svm": {}
 			},
 
-	"grid_s":{"cv": 5, "score": "neg_mean_absolute_error"},
+	"grid_s":{"cv": 10, "score": "neg_mean_absolute_error"},
 
 	"figs":{"dpi": 200,
 			"x_size": 12,
 			"y_size": 8
-			}
+			},
+
+	"test_size": 0.3
+
 
 }
