@@ -3,7 +3,7 @@
 		"path":"/Users/pouyafirouzmakan/Desktop/archive/ETFs/sret.us.txt"
 			},
 
-	"model":{"lin_reg": {}, 
+	"model":{"lin_reg": {LinearRegresso}, 
 
 				"svm": {}
 			},
@@ -15,7 +15,11 @@
 			"y_size": 8
 			},
 
-	"test_size": 0.3
+	"test_size": 0.3,
+
+	"seed": 42,
+
+	"degree": 3
 
 
 }
