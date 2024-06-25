@@ -15,9 +15,9 @@ from sklearn.metrics import mean_squared_error, mean_absolute_error
 def pre_visualization(df):
 
     plt.figure(dpi=200, figsize=(12, 8))
-    sns.lineplot(data=df, x='Date', y='Low', color='b', ls='--')
-    sns.lineplot(data=df, x='Date', y='Close', color='k')
-    sns.lineplot(data=df, x='Date', y='High', color='r', ls='-.')
+    sns.lineplot(data=df, x='Date', y='Low', color='b', ls='--', lw=0.5)
+    sns.lineplot(data=df, x='Date', y='Close', color='k', lw=0.5)
+    sns.lineplot(data=df, x='Date', y='High', color='r', ls='-.', lw=0.5)
     plt.xlabel = 'Date'
     plt.ylabel = 'Close Price'
     plt.grid()
@@ -30,7 +30,7 @@ def report_and_visualization(ytest, pred):
     print(f'MAE: {mean_absolute_error(ytest, pred)}')
     print(f'MSE:{mean_squared_error(ytest, pred)}')
     print(f'MSE:{mean_squared_error(np.sqrt(ytest, pred))}')
-    fig = plt.figure(dpi=200, figsize=(12, 8))
+    fig = plt.figure(dpi=100, figsize=(8, 6))
     sns.kdeplot(ytest - pred)
     plt.axhline(y=0, color='r', ls='--')
     plt.show()
