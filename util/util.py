@@ -3,15 +3,19 @@ This is the util file including the small functions
 """
 __author__: str = "Pouya 'Adrian' Firouzmakan"
 __all__ = [
-           'visualization'
+           'pre_visualization', 'res_visualization', 'feat_label'
            ]
 
+
+
+import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+from sklearn.metrics import mean_squared_error, mean_absolute_error
 
 
-def visualization(df, , x='Date', y_1='Close', y_2='High', y_3='Low'):
+def pre_visualization(df, , x='Date', y_1='Close', y_2='High', y_3='Low'):
 	""
 	this function is just for visualizing the dataset befor training
 	:param df:
@@ -32,6 +36,25 @@ def visualization(df, , x='Date', y_1='Close', y_2='High', y_3='Low'):
 	plt.ylabel='Close Price'
 	plt.grid()
 	plt.show()
+
+
+def res_visualization(y_est, pred):
+	""
+	this function to see the quality of the linear model
+	:param ress_error: this is the residual error 
+
+	return:
+
+	""
+	print('\n\n\n')
+	print(f'MAE: {mean_absolute_error(ytest, pred)}')
+	print(f'MSE:{mean_squared_error(ytest, pred)}')
+	print(f'MSE:{mean_squared_error(np.sqrt(ytest, pred))}')
+	fig = plt.figure(dpi=200, figsize=(12,8))
+	sns.kdeplot(ytest - pred)
+	plt.axhline(y=0, color='r', ls='--')
+	plt.show()
+
 
 def feat_label(df):
 	""
