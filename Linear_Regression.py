@@ -7,6 +7,7 @@ from sklearn.model_selectrion import train_test_split, GridSearchCV
 from sklearn.preprocessing import PolynomialFeatures, StandardSclaer
 from sklearn.linear_model import ElasticNet
 from sklearn.pipeline import Pipeline
+from sklearn.metrics import 
 
 
 # open the file as a DataFrame (here the file is a .txt related to a ETF called SQQQ)
@@ -19,7 +20,7 @@ print(df.info())
 print(df.is_null())
 print(df.head(2))
 print(df.describe().transpose())
-util.visualization(df)
+util.pre_visualization(df)
 
 x, y = util.feat_label(df)
 xtrain, xtest, ytrain, ytest = train_test_split(x, y, test_size = config['test_size'], 
@@ -51,7 +52,7 @@ final_model = grid_model.fit(xtrain, ytrain)
 pred = final_model.predict(xtest)
 
 res_error = ytest - pred
-util.res_visualization(res_error)
+util.report_and_visualization(y_test, pred)
 
 
 

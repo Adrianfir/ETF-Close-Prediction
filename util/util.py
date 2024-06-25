@@ -15,8 +15,9 @@ import seaborn as sns
 from sklearn.metrics import mean_squared_error, mean_absolute_error
 
 
-def pre_visualization(df, , x='Date', y_1='Close', y_2='High', y_3='Low'):
-	""
+def pre_visualization(df):
+
+	"""
 	this function is just for visualizing the dataset befor training
 	:param df:
 	:param x:
@@ -26,7 +27,7 @@ def pre_visualization(df, , x='Date', y_1='Close', y_2='High', y_3='Low'):
 
 	return:
 
-	""
+	"""
 
 	fig = plt.figure(dpi=200, figsize=(12,8))
 	sns.lineplot(df['Date'], df['Low'], color='b', ls='--')
@@ -39,13 +40,14 @@ def pre_visualization(df, , x='Date', y_1='Close', y_2='High', y_3='Low'):
 
 
 def res_visualization(y_est, pred):
-	""
+
+	"""
 	this function to see the quality of the linear model
 	:param ress_error: this is the residual error 
 
 	return:
 
-	""
+	"""
 	print('\n\n\n')
 	print(f'MAE: {mean_absolute_error(ytest, pred)}')
 	print(f'MSE:{mean_squared_error(ytest, pred)}')
@@ -57,12 +59,13 @@ def res_visualization(y_est, pred):
 
 
 def feat_label(df):
-	""
+
+	"""
 	this function is to determine features and the label
 	:param df:
 
 	return:
-	""
+	"""
 	return df['Close'], df.drop(['Date', 'Close'], axis=1)
 
 
