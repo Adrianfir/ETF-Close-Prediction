@@ -1,33 +1,24 @@
 {
-	"data": {
-		"path":"/Users/pouyafirouzmakan/Desktop/archive/ETFs/sret.us.txt"
-			},
-
-
-	"model":{"lin_reg": {"alpha_range": [0, 0.2, 0.4, 0.6, 0.8, 1],
-						 "l1_ratio": [0, 0.2, 0.5, 0.8, 1],
-						 "poly_deg": [1, 2, 3, 4]
-						}, 
-
-				"svm": {}
-			},
-
-
-	"grid_s":{"cv": 10, 
-			  "score": "neg_mean_absolute_error"
-			 },
-
-
-	"figs":{"dpi": 200,
-			"x_size": 12,
-			"y_size": 8
-			},
-
-
-	"test_size": 0.3,
-	
-
-	"seed": 42,
-
-
+    "data": {
+        "path":"/Users/pouyafirouzmakan/Desktop/archive/ETFs/sqqq.us.txt"
+    },
+    "model": {
+        "lin_reg": {
+            "alpha": [0, 0.2, 0.4, 0.6, 0.8, 1],
+            "l1_ratio": [0, 0.2, 0.5, 0.8, 1],
+            "poly_deg": [1, 2, 3, 4]
+        },
+        "svm": {}
+    },
+    "grid_s": {
+        "cv": 10,
+        "score": "neg_mean_absolute_error"
+    },
+    "figs": {
+        "dpi": 200,
+        "x_size": 12,
+        "y_size": 8
+    },
+    "test_size": 0.3,
+    "seed": 42
 }
