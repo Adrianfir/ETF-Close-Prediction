@@ -57,6 +57,8 @@ def report(model, xtrain, xtest, ytest, pred):
     sns.kdeplot(pred - ytest, ax=axes[0])
     axes[0].set_title('Distribution of the residual error')
     axes[0].grid()
+    axes[0].set_xlabel(' ')
+    axes[0].set_ylabel(' ')
 
     sns.scatterplot(x=pred, y=pred - ytest, ax=axes[1])
     axes[1].axhline(y=0, ls='--', color='r')
