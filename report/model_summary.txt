@@ -1,0 +1,46 @@
+Model Summary:
+
+==============================
+
+Best Polynomial Degree: 1
+
+Alpha: 0.1
+
+L1 Ratio: 1
+
+Coefficients: [ 0.          0.         18.13191332 12.84213112 -0.          0.        ]
+
+Intercept: 58.25233049645391
+
+
+Model Performance Metrics:
+
+------------------------------
+
+R-squared: 0.999744699263741
+
+Mean Absolute Error (MAE): 0.34159197600273683
+
+Mean Squared Error (MSE): 0.2688836433278252
+
+Root Mean Squared Error (RMSE): 0.5185399148839221
+
+
+Model Details:
+
+------------------------------
+
+Training Data:
+
+  - Number of Observations: 4230
+
+  - Number of Features: 5
+
+Testing Data:
+
+  - Number of Observations: 471
+
+  - Number of Features: 5
+
+==============================
+

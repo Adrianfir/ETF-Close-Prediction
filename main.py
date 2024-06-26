@@ -5,6 +5,8 @@ from sklearn.preprocessing import PolynomialFeatures, StandardScaler
 from sklearn.linear_model import ElasticNet
 from sklearn.pipeline import Pipeline
 from config.config import config
+import joblib
+import os
 
 # Open the file as a DataFrame (assuming the file is a .txt related to a ETF called SQQQ)
 df = pd.read_csv(config['data']['path'], delimiter=',')
@@ -59,6 +61,22 @@ if __name__ == '__main__':
     # Predictions
     prediction = best_estimator.predict(xtest)
     res_error = ytest - prediction
-    # Visualization and reporting
-    util.report_and_visualization(best_estimator.get_params(),
-                                  xtrain, ytrain, xtest, ytest, prediction)
+    # reporting
+    util.report(best_estimator.get_params(), xtrain,
+                xtest, ytest, prediction)
+
+    # let's train a new model using the best obtained hyperparameters
+    final_model = ElasticNet(alpha=best_estimator.get_params()['model'].alpha,
+                             l1_ratio=best_estimator.get_params()['model'].l1_ratio,
+                             max_iter=config['model']['lin_reg']['max_iter'][0],
+                             )
+    poly_feat_f = PolynomialFeatures(degree=1)
+    scaler_f = StandardScaler()
+
+    operations_f = [('scaler_2', scaler_f), ('poly_feat_2', poly_feat_f), ('final_model', final_model)]
+    pipe_f = Pipeline(operations_f)
+    pipe_f.fit(x, y)
+    parent_directory = os.path.abspath(os.path.join(os.getcwd(), os.pardir))
+    model_path = os.path.join(parent_directory, 'Linear_Regression/final_model/final_model.pkl')
+    joblib.dump(pipe_f, model_path)
+    util.final_visualization(pipe_f, df, x)

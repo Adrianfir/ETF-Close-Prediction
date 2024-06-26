@@ -25,5 +25,7 @@
 
     "test_size": 0.1,
 
-    "seed": 42
+    "seed": 42,
+
+    "output_path": "report/model_summary.txt"
 }
