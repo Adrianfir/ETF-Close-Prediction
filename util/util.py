@@ -14,13 +14,7 @@ from config.config import config
 
 
 def pre_visualization(df):
-    plt.figure(dpi=200, figsize=(12, 8))
-    sns.lineplot(data=df, x='Date', y='Low', color='b', ls='--', lw=0.5)
-    sns.lineplot(data=df, x='Date', y='Close', color='k', lw=0.5)
-    sns.lineplot(data=df, x='Date', y='High', color='r', ls='-.', lw=0.5)
-    plt.xlabel = 'Date'
-    plt.ylabel = 'Close Price'
-    plt.grid()
+    sns.pairplot(df, diag_kind='kde')
     plt.show()
 
 

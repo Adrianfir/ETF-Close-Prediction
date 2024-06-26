@@ -14,7 +14,7 @@ df = pd.read_csv(config['data']['path'], delimiter=',')
 print(df.info())
 print(df.head(2))
 print(df.describe().transpose())
-# util.pre_visualization(df)
+util.pre_visualization(df)
 
 if __name__ == '__main__':
     x, y = util.feat_label(df)
